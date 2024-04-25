@@ -23,7 +23,7 @@ export default {
 					'30%': { opacity: '30%' },
 					'50%': { opacity: '50%' },
 					'90%': { opacity: '90%' },
-					'100%': { opacity: '100%', display: 'initial' },
+					'100%': { opacity: '100%', display: 'block' },
 				},
 			},
 			animation: {

@@ -61,6 +61,7 @@ const Layout = ({ children }) => {
 					<button className="sm:hidden btn btn-circle btn-ghost"
           onClick={() => {
             const el = document.getElementById("small-nav");
+            el.classList.remove('hidden');
             el.classList.add('animate-slide-down');
             el.classList.remove('animate-slide-up');
           }}>
@@ -71,7 +72,7 @@ const Layout = ({ children }) => {
 				{/* Md> Nav */}
 				<div
 					id="small-nav"
-					className="px-10 fixed w-full top-0 bg-gradient shadow-md shadow-secondary-content"
+					className="px-10 fixed w-full top-0 bg-gradient shadow-md shadow-secondary-content hidden"
 				>
 					<div className='-z-10 h-full'>
 						<div className="text-right py-20">

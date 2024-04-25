@@ -17,14 +17,16 @@ const App = () => {
 			{location.hash == '#works' ? (
 				<Works />
 			) : (
-				<div className='text-center min-h-[400px] flex justify-center flex-col'>
-					<p className='text-5xl'>ONWUACHUMBA UDOKA</p>
-					<div className="py-4"></div>
-					<p className='text-xl'>is an ever evolving UI/UX Designer</p>
-					<div className="py-4"></div>
-					<p className='capitalize text-gray-400'>moving pixels, changing lives</p>
+				<div className="text-center min-h-[400px] flex justify-center flex-col">
+					<p className="text-3xl md:text-5xl">ONWUACHUMBA UDOKA</p>
+					<div className="py-3 sm:py-4"></div>
+					<p className="text-xl">is an ever evolving UI/UX Designer</p>
+					<div className="py-3 sm:py-4"></div>
+					<p className="capitalize text-gray-400">
+						moving pixels, changing lives
+					</p>
 
-					<div className="flex justify-between">
+					<div className="md:flex justify-between">
 						<Link></Link>
 						<Link></Link>
 						<Link></Link>

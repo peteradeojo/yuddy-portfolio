@@ -8,20 +8,59 @@
     src: url('./assets/josefin/JosefinSans-VariableFont_wght.ttf');
     font-weight: 350;
   }
+
   @font-face {
     font-family: "Josefin Bold";
     src: url('./assets/josefin/JosefinSans-VariableFont_wght.ttf');
     font-weight: bold;
   }
 
+  @font-face {
+    font-family: "Josefin Light";
+    src: url('./assets/josefin/static/JosefinSans-ExtraLight.ttf');
+    font-weight: lighter;
+  }
+
   body {
     background:
-    radial-gradient(41.53% 82.12% at 100% 95.21%, #192F26 0%, rgba(62, 86, 70, 0) 100%),
+      radial-gradient(41.53% 82.12% at 100% 95.21%, #192F26 0%, rgba(62, 86, 70, 0) 100%),
       radial-gradient(52.1% 60.7% at 32.74% 42.58%, #3E5646 0%, #0B110C 100%);
-    height: 100vh;
     background-position: top left;
     background-attachment: fixed;
+    height: 100vh;
     font-family: 'Josefin';
     color: #fff;
+  }
+
+  @keyframes slide-up {
+    0% {
+      /* height: auto;
+      overflow: hidden; */
+      opacity: 100%;
+    }
+
+    50% {
+      /* height: 50%; */
+      opacity: 50%;
+    }
+
+    90% {
+      /* height: 0; */
+      opacity: 0;
+    }
+
+    100% {
+      display: none;
+    }
+  }
+}
+
+@layer components {
+  .bg-gradient {
+    background:
+      radial-gradient(41.53% 82.12% at 100% 95.21%, #192F26 0%, rgba(62, 86, 70, 0) 100%),
+      radial-gradient(52.1% 60.7% at 32.74% 42.58%, #3E5646 0%, #0B110C 100%);
+    background-position: top left;
+    background-attachment: fixed;
   }
 }

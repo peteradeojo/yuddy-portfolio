@@ -1,11 +1,9 @@
-import udoka from './assets/UDOKA.svg';
+import Works from './components/Works';
 
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import LinkBtn from './components/LinkBtn';
 
 const Home = () => {
-	return <></>;
-};
-const Works = () => {
 	return <></>;
 };
 
@@ -17,21 +15,23 @@ const App = () => {
 			{location.hash == '#works' ? (
 				<Works />
 			) : (
-				<div className="text-center min-h-[400px] flex justify-center flex-col">
-					<p className="text-3xl md:text-5xl">ONWUACHUMBA UDOKA</p>
-					<div className="py-3 sm:py-4"></div>
-					<p className="text-xl">is an ever evolving UI/UX Designer</p>
-					<div className="py-3 sm:py-4"></div>
-					<p className="capitalize text-gray-400">
-						moving pixels, changing lives
-					</p>
-
-					<div className="md:flex justify-between">
-						<Link></Link>
-						<Link></Link>
-						<Link></Link>
+				<>
+					<div className="text-center pt-40">
+						<p className="text-3xl md:text-5xl">ONWUACHUMBA UDOKA</p>
+						<div className="py-3"></div>
+						<p className="text-xl">is an ever evolving UI/UX Designer</p>
+						<div className="py-3"></div>
+						<p className="capitalize text-gray-400">
+							moving pixels, changing lives
+						</p>
+						<div className="py-3"></div>
+						<div className="w-full flex justify-center uppercase">
+							<LinkBtn to="/#about" text="About me" className="px-[30px]" />
+							<div className="w-[40px]"></div>
+							<LinkBtn to="/#contact" text="contact me" className="px-[30px]" />
+						</div>
 					</div>
-				</div>
+				</>
 			)}
 		</>
 	);

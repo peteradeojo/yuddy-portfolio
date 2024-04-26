@@ -2,7 +2,7 @@ import { Link, Outlet } from 'react-router-dom';
 import { BiPlus, BiPlusCircle } from 'react-icons/bi';
 
 import udoka from '../assets/UDOKA.svg';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
 const navLinks = [
@@ -58,13 +58,15 @@ const Layout = ({ children }) => {
 					</Link>
 					{/* <div className="btn btn-circle">
         </div> */}
-					<button className="sm:hidden btn btn-circle btn-ghost"
-          onClick={() => {
-            const el = document.getElementById("small-nav");
-            el.classList.remove('hidden');
-            el.classList.add('animate-slide-down');
-            el.classList.remove('animate-slide-up');
-          }}>
+					<button
+						className="sm:hidden btn btn-circle btn-ghost"
+						onClick={() => {
+							const el = document.getElementById('small-nav');
+							el.classList.remove('hidden');
+							el.classList.add('animate-slide-down');
+							el.classList.remove('animate-slide-up');
+						}}
+					>
 						<BiPlusCircle className="text-3xl" />
 					</button>
 				</div>
@@ -72,9 +74,9 @@ const Layout = ({ children }) => {
 				{/* Md> Nav */}
 				<div
 					id="small-nav"
-					className="px-10 fixed w-full top-0 bg-gradient shadow-md shadow-secondary-content hidden"
+					className="px-10 fixed w-full top-0 bg-gradient shadow-md shadow-secondary-content hidden z-50"
 				>
-					<div className='-z-10 h-full'>
+					<div className="-z-10 h-full">
 						<div className="text-right py-20">
 							<button
 								className="btn btn-ghost text-right font-lighter text-5xl"
@@ -89,38 +91,38 @@ const Layout = ({ children }) => {
 						</div>
 
 						<div className="flex flex-col justify-center items-center uppercase">
-							{navLinks.map((nav) => {
-								if (nav.type == 1) {
-									return (
-										<>
+							{navLinks.map((nav, index) => {
+								return (
+									<Fragment key={`${index}-link`}>
+										{nav.type == 1 && (
 											<Link
+												key={`${index}-link`}
 												to={nav.href}
 												className="btn btn-ghost hover:font-bold"
 											>
 												{nav.text}
 											</Link>
-										</>
-									);
-								}
-
-								return (
-									<>
-										<div className="py-3"></div>
-										<Link
-											to={nav.href}
-											className="btn btn-outline w-2/3  outline-white outline text-white outline-0"
-										>
-											{nav.text}
-										</Link>
-									</>
+										)}
+										{nav.type != 1 && (
+											<>
+												<div className="py-3"></div>
+												<Link
+													to={nav.href}
+													className="btn btn-outline w-2/3  outline-white outline text-white outline-0"
+												>
+													{nav.text}
+												</Link>
+											</>
+										)}
+									</Fragment>
 								);
 							})}
-              <div className="py-4"></div>
+							<div className="py-4"></div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="px-10 sm:px-20">
+			<div className="px-0 sm:px-20">
 				<Outlet />
 			</div>
 		</>

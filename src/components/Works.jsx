@@ -21,7 +21,7 @@ const GridEntry = ({ children, className }) => {
 const CaseStudies = () => {
 	return (
 		<>
-			<div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-4">
+			<div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-y-4 md:gap-4">
 				<GridEntry className="col-span-1 row-span-2">
 					<Link className="grid-overlay uppercase">
 						<div className="overlay p-4">
@@ -29,7 +29,7 @@ const CaseStudies = () => {
 							<p className="text-gray-400">ui design</p>
 						</div>
 					</Link>
-					<img src={one} className="h-full" />
+					<img src={one} className="h-full w-full" />
 				</GridEntry>
 				<GridEntry className="col-span-1 row-span-1">
 					<Link className="grid-overlay uppercase">
@@ -57,8 +57,8 @@ const CaseStudies = () => {
 const WebDesign = () => {
 	return (
 		<>
-			<div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-4">
-				<GridEntry className={'col-span-1 row-span-2'}>
+			<div className="grid md:grid-cols-2 md:grid-rows-2 gap-y-4 md:gap-4">
+				<GridEntry className="row-start-1 col-span-1 md:row-span-2">
 					<Link className="grid-overlay">
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">icare website (2022)</p>
@@ -67,7 +67,7 @@ const WebDesign = () => {
 					</Link>
 					<img src={w1} />
 				</GridEntry>
-				<GridEntry className={'col-span-1 col-start-2 row-start-1 row-span-1'}>
+				<GridEntry className="col-span-1 md:col-start-2 row-start-2 md:row-start-1 row-span-1">
 					<Link className="grid-overlay">
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">cybeauty website</p>
@@ -76,7 +76,7 @@ const WebDesign = () => {
 					</Link>
 					<img src={w2} />
 				</GridEntry>
-				<GridEntry className={'col-start-2 row-span-1'}>
+				<GridEntry className={'md:col-start-2 md:row-start-2 row-span-1'}>
 					<Link className="grid-overlay">
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">feather app website</p>
@@ -93,12 +93,14 @@ const WebDesign = () => {
 const Playground = () => {
 	return (
 		<>
-			<div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-4">
+			<div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-y-4 md:gap-4">
 				<GridEntry>
 					<Link className="grid-overlay">
 						<div className="overlay uppercase p-4">
-							<p></p>
-							<p></p>
+							<p className="text-2xl">lascarpa shoe store (2022)</p>
+							<p className="text-gray-400">
+								ui design, logo design,prototyping
+							</p>
 						</div>
 					</Link>
 					<img src={p1} />
@@ -106,8 +108,10 @@ const Playground = () => {
 				<GridEntry>
 					<Link className="grid-overlay">
 						<div className="overlay uppercase p-4">
-							<p></p>
-							<p></p>
+							<p className="text-2xl">groot academy portal (2022)</p>
+							<p className="text-gray-400">
+								ui design, logo design,prototyping
+							</p>
 						</div>
 					</Link>
 					<img src={p2} />
@@ -115,8 +119,10 @@ const Playground = () => {
 				<GridEntry>
 					<Link className="grid-overlay">
 						<div className="overlay uppercase p-4">
-							<p></p>
-							<p></p>
+							<p className="text-2xl">bubble tv app (2022)</p>
+							<p className="text-gray-400">
+								ui design, logo design,prototyping
+							</p>
 						</div>
 					</Link>
 					<img src={p3} />
@@ -124,8 +130,10 @@ const Playground = () => {
 				<GridEntry>
 					<Link className="grid-overlay">
 						<div className="overlay uppercase p-4">
-							<p></p>
-							<p></p>
+							<p className="text-2xl">mestore dashboard (2022)</p>
+							<p className="text-gray-400">
+								ui design, logo design,prototyping
+							</p>
 						</div>
 					</Link>
 					<img src={p4} />
@@ -171,7 +179,7 @@ const Works = () => {
 					</OutlineBtn>
 				</div>
 
-				<div id="tab-content" className="pt-8 px-4 sm:px-0">
+				<div id="tab-content" className="pt-8 px-2">
 					{visible == 0 && <CaseStudies />}
 					{visible == 1 && <WebDesign />}
 					{visible == 2 && <Playground />}

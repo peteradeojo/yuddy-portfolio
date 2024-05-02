@@ -19,7 +19,6 @@ const About = () => {
 						background in engineering, I bring a holistic approach to every
 						project, ensuring that each design decision serves a purpose.
 					</p>
-					bun dev
 				</div>
 				<img src="" className="bg-white block" alt="" />
 			</div>

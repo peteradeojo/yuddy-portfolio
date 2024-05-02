@@ -26,7 +26,7 @@ const App = () => {
 						</p>
 						<div className="py-3"></div>
 						<div className="w-full flex justify-center uppercase">
-							<LinkBtn to="/#about" text="About me" className="px-[30px]" />
+							<LinkBtn to="/about" text="About me" className="px-[30px]" />
 							<div className="w-[40px]"></div>
 							<LinkBtn to="/#contact" text="contact me" className="px-[30px]" />
 						</div>

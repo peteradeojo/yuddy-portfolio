@@ -81,4 +81,8 @@
   .grid-overlay .overlay {
     @apply absolute bottom-0;
   }
+
+  p {
+    line-height: 2.2em;
+  }
 }

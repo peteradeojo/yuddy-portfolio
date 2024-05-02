@@ -10,12 +10,17 @@ import {
 	Route,
 } from 'react-router-dom';
 import Layout from './components/Layout.jsx';
+import About from './pages/About.jsx';
+import CrumbLayout from './components/CrumbLayout.jsx';
 
 const routes = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<Layout />}>
 			<Route index element={<App />} />
-			{/* <Route path='/works' element={<App />} /> */}
+			<Route element={<CrumbLayout />} errorElement={<></>}>
+				<Route path="/about" element={<About />} />
+				<Route path="/about/my-day" element={<About />} />
+			</Route>
 		</Route>
 	)
 );

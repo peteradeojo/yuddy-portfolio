@@ -14,7 +14,7 @@ import p3 from '../assets/playground/3.png';
 import p4 from '../assets/playground/4.png';
 import { Link } from 'react-router-dom';
 
-const GridEntry = ({ children, className }) => {
+export const GridEntry = ({ children, className }) => {
 	return <div className={`grid-entry relative ${className}`}>{children}</div>;
 };
 
@@ -59,7 +59,7 @@ const WebDesign = () => {
 		<>
 			<div className="grid md:grid-cols-2 md:grid-rows-2 gap-y-4 md:gap-4">
 				<GridEntry className="row-start-1 col-span-1 md:row-span-2">
-					<Link className="grid-overlay">
+					<Link className="grid-overlay" to={'/my-works/web-design/icare-website'}>
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">icare website (2022)</p>
 							<p className="text-gray-400">ui design, web design</p>
@@ -68,7 +68,7 @@ const WebDesign = () => {
 					<img src={w1} />
 				</GridEntry>
 				<GridEntry className="col-span-1 md:col-start-2 row-start-2 md:row-start-1 row-span-1">
-					<Link className="grid-overlay">
+					<Link className="grid-overlay" to={'/my-works/web-design/cybeauty-website'}>
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">cybeauty website</p>
 							<p className="text-gray-400">ui design, web design</p>
@@ -77,7 +77,7 @@ const WebDesign = () => {
 					<img src={w2} />
 				</GridEntry>
 				<GridEntry className={'md:col-start-2 md:row-start-2 row-span-1'}>
-					<Link className="grid-overlay">
+					<Link className="grid-overlay" to={'/my-works/web-design/feather-app-website'}>
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">feather app website</p>
 							<p className="text-gray-400">ui design, web design</p>

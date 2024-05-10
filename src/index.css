@@ -83,6 +83,7 @@
   }
 
   p {
-    line-height: 2.2em;
+    /* line-height: 2.2em; */
+    @apply leading-[1.5] md:leading-[2]
   }
 }

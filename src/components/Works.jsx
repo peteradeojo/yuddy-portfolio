@@ -23,7 +23,7 @@ const CaseStudies = () => {
 		<>
 			<div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-y-4 md:gap-4">
 				<GridEntry className="col-span-1 row-span-2">
-					<Link className="grid-overlay uppercase">
+					<Link className="grid-overlay uppercase" to={'/case-studies/whatsapp-redesign'}>
 						<div className="overlay p-4">
 							<p className="text-2xl">Whatsapp redesign</p>
 							<p className="text-gray-400">ui design</p>
@@ -32,7 +32,7 @@ const CaseStudies = () => {
 					<img src={one} className="h-full w-full" />
 				</GridEntry>
 				<GridEntry className="col-span-1 row-span-1">
-					<Link className="grid-overlay uppercase">
+					<Link className="grid-overlay uppercase" to={'/case-studies/feather-crypto-app'}>
 						<div className="overlay p-4">
 							<p className="text-2xl">feather crypto app</p>
 							<p className="text-gray-400">ui design</p>
@@ -41,7 +41,7 @@ const CaseStudies = () => {
 					<img src={two} className="h-full" />
 				</GridEntry>
 				<GridEntry className="col-span-1 md:col-start-2 row-span-1">
-					<Link className="grid-overlay uppercase">
+					<Link className="grid-overlay uppercase" to={'/case-studies/cybaplay'}>
 						<div className="overlay p-4">
 							<p className="text-2xl">cybaplay music app (2022)</p>
 							<p className="text-gray-400">ui design</p>
@@ -95,7 +95,7 @@ const Playground = () => {
 		<>
 			<div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-y-4 md:gap-4">
 				<GridEntry>
-					<Link className="grid-overlay">
+					<Link className="grid-overlay" to={'/playground/lascarpa'}>
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">lascarpa shoe store (2022)</p>
 							<p className="text-gray-400">
@@ -106,7 +106,7 @@ const Playground = () => {
 					<img src={p1} />
 				</GridEntry>
 				<GridEntry>
-					<Link className="grid-overlay">
+					<Link className="grid-overlay" to={'/playground/groot-academy'}>
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">groot academy portal (2022)</p>
 							<p className="text-gray-400">
@@ -117,7 +117,7 @@ const Playground = () => {
 					<img src={p2} />
 				</GridEntry>
 				<GridEntry>
-					<Link className="grid-overlay">
+					<Link className="grid-overlay" to={'/playground/bubble-tv'}>
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">bubble tv app (2022)</p>
 							<p className="text-gray-400">
@@ -128,7 +128,7 @@ const Playground = () => {
 					<img src={p3} />
 				</GridEntry>
 				<GridEntry>
-					<Link className="grid-overlay">
+					<Link className="grid-overlay" to={'/playground/mestore-dashboard'}>
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">mestore dashboard (2022)</p>
 							<p className="text-gray-400">

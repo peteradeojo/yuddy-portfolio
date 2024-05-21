@@ -7,59 +7,37 @@ import { crumbs } from '../config/crumbs_map';
 const BreadCrumb = ({ location }) => {
 	return (
 		<div className="flex text-[#ffffffad] items-center gap-x-2 font-light pt-12 pb-8 px-4 md:px-0">
-			<Link to={'/'} className="hover:text-white transition-colors">
-				Home
-			</Link>
-			{location.pathname in crumbs
-				? crumbs[location.pathname].links.map((t, i) => {
-						if (Array.isArray(t) && t.length > 1) {
+			<div className="flex overflow-x-auto">
+				{/* Leaving the home part out of the flex makes for an interesting effect tho */}
+				<Link to={'/'} className="hover:text-white transition-colors">
+					Home
+				</Link>
+				{location.pathname in crumbs
+					? crumbs[location.pathname].links.map((t, i) => {
+							if (Array.isArray(t) && t.length > 1) {
+								return (
+									<span key={t} className="flex items-center min-w-fit gap-x-2">
+										<FaAngleRight />
+										<Link
+											// to={location.pathname
+											// 	.split('/')
+											// 	.slice(0, i + 2)
+											// 	.join('/')}
+											to={t[1]}
+											className={
+												'transition-colors ' +
+												(i == location.pathname.split('/').slice(1).length - 1
+													? 'text-white'
+													: 'hover:text-white ')
+											}
+										>
+											{t[0]}
+										</Link>
+									</span>
+								);
+							}
 							return (
-								<span key={t} className="flex items-center gap-x-2">
-									<FaAngleRight />
-									<Link
-										// to={location.pathname
-										// 	.split('/')
-										// 	.slice(0, i + 2)
-										// 	.join('/')}
-										to={t[1]}
-										className={
-											'transition-colors ' +
-											(i == location.pathname.split('/').slice(1).length - 1
-												? 'text-white'
-												: 'hover:text-white ')
-										}
-									>
-										{t[0]}
-									</Link>
-								</span>
-							);
-						}
-						return (
-							<span key={t} className="flex items-center gap-x-2">
-								<FaAngleRight />
-								<Link
-									to={location.pathname
-										.split('/')
-										.slice(0, i + 2)
-										.join('/')}
-									className={
-										'transition-colors ' +
-										(i == location.pathname.split('/').slice(1).length - 1
-											? 'text-white'
-											: 'hover:text-white ')
-									}
-								>
-									{t}
-								</Link>
-							</span>
-						);
-				  })
-				: location.pathname
-						.split('/')
-						.slice(1)
-						.map((t, i) => {
-							return (
-								<span key={t} className="flex items-center gap-x-2">
+								<span key={t} className="flex items-center min-w-fit gap-x-2">
 									<FaAngleRight />
 									<Link
 										to={location.pathname
@@ -67,7 +45,7 @@ const BreadCrumb = ({ location }) => {
 											.slice(0, i + 2)
 											.join('/')}
 										className={
-											'capitalize transition-colors ' +
+											'transition-colors ' +
 											(i == location.pathname.split('/').slice(1).length - 1
 												? 'text-white'
 												: 'hover:text-white ')
@@ -77,8 +55,32 @@ const BreadCrumb = ({ location }) => {
 									</Link>
 								</span>
 							);
-						})}
-			{}
+					  })
+					: location.pathname
+							.split('/')
+							.slice(1)
+							.map((t, i) => {
+								return (
+									<span key={t} className="flex min-w-fit items-center gap-x-2">
+										<FaAngleRight />
+										<Link
+											to={location.pathname
+												.split('/')
+												.slice(0, i + 2)
+												.join('/')}
+											className={
+												'capitalize transition-colors ' +
+												(i == location.pathname.split('/').slice(1).length - 1
+													? 'text-white'
+													: 'hover:text-white ')
+											}
+										>
+											{t}
+										</Link>
+									</span>
+								);
+							})}
+			</div>
 		</div>
 	);
 };

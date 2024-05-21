@@ -21,9 +21,6 @@ const routes = createBrowserRouter(
 			<Route element={<CrumbLayout />} errorElement={<></>}>
 				<Route path="/about" element={<About />} />
 				<Route path="/about/my-day" element={<About />} />
-				{/* <Route path="/my-works/web-design/icare-website" element={<></>} />
-				<Route path="/my-works/web-design/cybeauty-website" element={<></>} />
-				<Route path="/my-works/web-design/feather-app-website" element={<></>} /> */}
 				{Object.keys(crumbs).map(k => <Route key={k} path={k} element={crumbs[k].element}></Route>)}
 			</Route>
 		</Route>

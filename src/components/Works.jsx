@@ -15,8 +15,6 @@ import p4 from '../assets/playground/4.png';
 import {
 	Link,
 	useLocation,
-	useParams,
-	useSearchParams,
 } from 'react-router-dom';
 
 export const GridEntry = ({ children, className }) => {

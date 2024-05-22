@@ -4,16 +4,16 @@ import Whatsapp from '../pages/case_studies/Whatsapp';
 
 const webLinks = [
 	['My Works', '/#works'],
-	['Web Design', '/#works'],
+	['Web Design', '/#works?tab=1'],
 ];
 const caseStudyLinks = [
 	['My Works', '/#works'],
-	['My Case Studies', '/#works'],
+	['My Case Studies', '/#works?tab=1'],
 ];
 
 const playgroundLinks = [
 	['My Works', '/#works'],
-	['My Playground', '/#works'],
+	['My Playground', '/#works?tab=2'],
 ];
 
 export const crumbs = {

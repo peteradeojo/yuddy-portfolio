@@ -3,16 +3,12 @@ import Works from './components/Works';
 import { useLocation } from 'react-router-dom';
 import LinkBtn from './components/LinkBtn';
 
-const Home = () => {
-	return <></>;
-};
-
 const App = () => {
 	const location = useLocation();
 
 	return (
 		<>
-			{location.hash == '#works' ? (
+			{location.hash.startsWith('#works') ? (
 				<Works />
 			) : (
 				<>

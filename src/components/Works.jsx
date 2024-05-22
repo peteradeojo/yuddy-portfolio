@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LinkBtn, { OutlineBtn } from './LinkBtn';
 import one from '../assets/case_studies/1.png';
 import two from '../assets/case_studies/2.png';
@@ -12,7 +12,12 @@ import p1 from '../assets/playground/1.png';
 import p2 from '../assets/playground/2.png';
 import p3 from '../assets/playground/3.png';
 import p4 from '../assets/playground/4.png';
-import { Link } from 'react-router-dom';
+import {
+	Link,
+	useLocation,
+	useParams,
+	useSearchParams,
+} from 'react-router-dom';
 
 export const GridEntry = ({ children, className }) => {
 	return <div className={`grid-entry relative ${className}`}>{children}</div>;
@@ -23,7 +28,10 @@ const CaseStudies = () => {
 		<>
 			<div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-y-4 md:gap-4">
 				<GridEntry className="col-span-1 row-span-2">
-					<Link className="grid-overlay uppercase" to={'/case-studies/whatsapp-redesign'}>
+					<Link
+						className="grid-overlay uppercase"
+						to={'/case-studies/whatsapp-redesign'}
+					>
 						<div className="overlay p-4">
 							<p className="text-2xl">Whatsapp redesign</p>
 							<p className="text-gray-400">ui design</p>
@@ -32,7 +40,10 @@ const CaseStudies = () => {
 					<img src={one} className="h-full w-full" />
 				</GridEntry>
 				<GridEntry className="col-span-1 row-span-1">
-					<Link className="grid-overlay uppercase" to={'/case-studies/feather-crypto-app'}>
+					<Link
+						className="grid-overlay uppercase"
+						to={'/case-studies/feather-crypto-app'}
+					>
 						<div className="overlay p-4">
 							<p className="text-2xl">feather crypto app</p>
 							<p className="text-gray-400">ui design</p>
@@ -41,7 +52,10 @@ const CaseStudies = () => {
 					<img src={two} className="h-full" />
 				</GridEntry>
 				<GridEntry className="col-span-1 md:col-start-2 row-span-1">
-					<Link className="grid-overlay uppercase" to={'/case-studies/cybaplay'}>
+					<Link
+						className="grid-overlay uppercase"
+						to={'/case-studies/cybaplay'}
+					>
 						<div className="overlay p-4">
 							<p className="text-2xl">cybaplay music app (2022)</p>
 							<p className="text-gray-400">ui design</p>
@@ -59,7 +73,10 @@ const WebDesign = () => {
 		<>
 			<div className="grid md:grid-cols-2 md:grid-rows-2 gap-y-4 md:gap-4">
 				<GridEntry className="row-start-1 col-span-1 md:row-span-2">
-					<Link className="grid-overlay" to={'/my-works/web-design/icare-website'}>
+					<Link
+						className="grid-overlay"
+						to={'/my-works/web-design/icare-website'}
+					>
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">icare website (2022)</p>
 							<p className="text-gray-400">ui design, web design</p>
@@ -68,7 +85,10 @@ const WebDesign = () => {
 					<img src={w1} />
 				</GridEntry>
 				<GridEntry className="col-span-1 md:col-start-2 row-start-2 md:row-start-1 row-span-1">
-					<Link className="grid-overlay" to={'/my-works/web-design/cybeauty-website'}>
+					<Link
+						className="grid-overlay"
+						to={'/my-works/web-design/cybeauty-website'}
+					>
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">cybeauty website</p>
 							<p className="text-gray-400">ui design, web design</p>
@@ -77,7 +97,10 @@ const WebDesign = () => {
 					<img src={w2} />
 				</GridEntry>
 				<GridEntry className={'md:col-start-2 md:row-start-2 row-span-1'}>
-					<Link className="grid-overlay" to={'/my-works/web-design/feather-app-website'}>
+					<Link
+						className="grid-overlay"
+						to={'/my-works/web-design/feather-app-website'}
+					>
 						<div className="overlay uppercase p-4">
 							<p className="text-2xl">feather app website</p>
 							<p className="text-gray-400">ui design, web design</p>
@@ -144,6 +167,19 @@ const Playground = () => {
 };
 
 const Works = () => {
+	const location = useLocation();
+
+	// Did this cos location.hash takes query params as part of the hash...wtf is even that? So i need to extract the tab query param from the hash
+	const tab = location.hash
+		?.split('?')[1]
+		?.split('&')
+		?.find((q) => q.startsWith('tab'))
+		?.split('=')[1];
+
+	useEffect(() => {
+		setVisible(Number(tab) || 0);
+	}, [tab]);
+
 	const [visible, setVisible] = useState(0);
 
 	return (
